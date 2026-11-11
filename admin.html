@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | MEERZAIB RESTAURANT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ADMIN LOGIN OVERLAY -->
+  <div id="adminLoginOverlay" class="admin-login-screen">
+    <div class="login-card glass-panel text-center">
+      <div class="logo-icon-box mx-auto" style="margin: 0 auto 1.2rem;">
+        <i class="fa-solid fa-crown"></i>
+      </div>
+      <h2>MEERZAIB RESTAURANT</h2>
+      <p class="login-sub">Staff & Executive Admin Portal</p>
+
+      <div class="credentials-hint">
+        <i class="fa-solid fa-circle-info"></i> Demo Credentials: <strong>admin</strong> / <strong>meerzaib123</strong>
+      </div>
+
+      <form id="adminLoginForm" class="admin-login-form">
+        <div class="form-group text-left">
+          <label><i class="fa-solid fa-user"></i> Username</label>
+          <input type="text" id="adminUser" required placeholder="admin" value="admin">
+        </div>
+        <div class="form-group text-left">
+          <label><i class="fa-solid fa-lock"></i> Password</label>
+          <input type="password" id="adminPass" required placeholder="meerzaib123" value="meerzaib123">
+        </div>
+        <button type="submit" class="btn-royal btn-block btn-shimmer btn-ripple" id="loginSubmitBtn">
+          <span><i class="fa-solid fa-right-to-bracket"></i> Login To Dashboard</span>
+        </button>
+      </form>
+
+      <div class="login-footer-links">
+        <a href="index.html" class="back-site-link"><i class="fa-solid fa-arrow-left"></i> Back to Main Restaurant Website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN MAIN WRAPPER -->
+  <div id="adminApp" class="admin-layout" style="display:none;">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-brand">
+        <div class="logo-icon-box">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MEERZAIB</span>
+          <span class="brand-sub">CONTROL CENTER</span>
+        </div>
+      </div>
+
+      <nav class="admin-menu">
+        <button class="admin-nav-item active" data-tab="dashboardTab">
+          <i class="fa-solid fa-chart-pie"></i> Dashboard Overview
+        </button>
+        <button class="admin-nav-item" data-tab="ordersTab">
+          <i class="fa-solid fa-receipt"></i> Orders Management <span class="admin-badge" id="ordersPendingBadge">0</span>
+        </button>
+        <button class="admin-nav-item" data-tab="menuTab">
+          <i class="fa-solid fa-bowl-food"></i> Food Menu Items
+        </button>
+        <button class="admin-nav-item" data-tab="reservationsTab">
+          <i class="fa-solid fa-calendar-check"></i> Table Reservations <span class="admin-badge" id="resPendingBadge">0</span>
+        </button>
+        <button class="admin-nav-item" data-tab="reviewsTab">
+          <i class="fa-solid fa-comments"></i> Guest Reviews
+        </button>
+      </nav>
+
+      <div class="admin-sidebar-bottom">
+        <a href="index.html" target="_blank" class="admin-view-site-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Customer Site
+        </a>
+        <button class="admin-logout-btn" id="adminLogoutBtn">
+          <i class="fa-solid fa-power-off"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Top Bar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="icon-btn sidebar-toggle-btn" id="sidebarToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h2 id="currentTabTitle">Dashboard Overview</h2>
+        </div>
+        <div class="topbar-right">
+          <span class="admin-user-pill">
+            <i class="fa-solid fa-shield-halved highlight-gold"></i> Logged in as <strong>Manager</strong>
+          </span>
+          <a href="index.html" class="btn-royal btn-sm">
+            <i class="fa-solid fa-utensils"></i> View Site
+          </a>
+        </div>
+      </header>
+
+      <div class="admin-content-container">
+
+        <!-- 1. DASHBOARD OVERVIEW TAB -->
+        <section id="dashboardTab" class="admin-tab-pane active">
+          <div class="stats-cards-grid">
+            <div class="admin-stat-box">
+              <div class="stat-icon-wrap icon-orders">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Total Orders</span>
+                <h3 id="statTotalOrders" class="stat-val">0</h3>
+                <small class="stat-change text-emerald"><i class="fa-solid fa-arrow-trend-up"></i> Live Tracking</small>
+              </div>
+            </div>
+
+            <div class="admin-stat-box">
+              <div class="stat-icon-wrap icon-revenue">
+                <i class="fa-solid fa-money-bill-trend-up"></i>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Total Revenue</span>
+                <h3 id="statTotalRevenue" class="stat-val highlight-gold">Rs. 0</h3>
+                <small class="stat-change text-gold"><i class="fa-solid fa-coins"></i> Sales Recorded</small>
+              </div>
+            </div>
+
+            <div class="admin-stat-box">
+              <div class="stat-icon-wrap icon-reservations">
+                <i class="fa-solid fa-chair"></i>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Table Bookings</span>
+                <h3 id="statTotalBookings" class="stat-val">0</h3>
+                <small class="stat-change text-purple"><i class="fa-solid fa-users"></i> Guests Scheduled</small>
+              </div>
+            </div>
+
+            <div class="admin-stat-box">
+              <div class="stat-icon-wrap icon-dishes">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+              <div class="stat-meta">
+                <span class="stat-label">Active Dishes</span>
+                <h3 id="statTotalDishes" class="stat-val">12</h3>
+                <small class="stat-change text-cyan"><i class="fa-solid fa-check"></i> On Menu</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Panels -->
+          <div class="dashboard-split-grid">
+            <div class="dash-panel glass-panel">
+              <div class="panel-header">
+                <h3><i class="fa-solid fa-clock-rotate-left highlight-gold"></i> Recent Orders</h3>
+                <button class="btn-outline-gold btn-sm" onclick="switchAdminTab('ordersTab')">View All</button>
+              </div>
+              <div class="table-responsive">
+                <table class="admin-table" id="dashboardRecentOrdersTable">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Customer</th>
+                      <th>Total</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Recent orders dynamically populated -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="dash-panel glass-panel">
+              <div class="panel-header">
+                <h3><i class="fa-solid fa-calendar-days highlight-gold"></i> Latest Table Bookings</h3>
+                <button class="btn-outline-gold btn-sm" onclick="switchAdminTab('reservationsTab')">View All</button>
+              </div>
+              <div class="table-responsive">
+                <table class="admin-table" id="dashboardRecentBookingsTable">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Date & Time</th>
+                      <th>Guests</th>
+                      <th>Area</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Bookings dynamically populated -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. ORDERS MANAGEMENT TAB -->
+        <section id="ordersTab" class="admin-tab-pane">
+          <div class="tab-toolbar">
+            <div class="filter-pills-bar">
+              <button class="order-filter-pill active" data-filter="all">All Orders</button>
+              <button class="order-filter-pill" data-filter="Pending">Pending</button>
+              <button class="order-filter-pill" data-filter="Preparing">Preparing</button>
+              <button class="order-filter-pill" data-filter="Completed">Completed</button>
+              <button class="order-filter-pill" data-filter="Cancelled">Cancelled</button>
+            </div>
+            <button class="btn-outline-gold btn-sm" onclick="addSampleOrderDemo()">
+              <i class="fa-solid fa-plus"></i> Simulate New Order
+            </button>
+          </div>
+
+          <div class="dash-panel glass-panel">
+            <div class="table-responsive">
+              <table class="admin-table" id="ordersMainTable">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer Details</th>
+                    <th>Ordered Items</th>
+                    <th>Total Bill</th>
+                    <th>Type & Time</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                  <!-- Orders injected dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. FOOD MENU ITEMS TAB (CRUD) -->
+        <section id="menuTab" class="admin-tab-pane">
+          <div class="tab-toolbar">
+            <button class="btn-royal btn-shimmer" onclick="openAddDishModal()">
+              <i class="fa-solid fa-plus-circle"></i> Add New Dish
+            </button>
+            <button class="btn-outline-gold btn-sm" onclick="resetToDefaultMenu()">
+              <i class="fa-solid fa-rotate-left"></i> Reset To Default Royal Menu
+            </button>
+          </div>
+
+          <div class="dash-panel glass-panel">
+            <div class="table-responsive">
+              <table class="admin-table" id="menuAdminTable">
+                <thead>
+                  <tr>
+                    <th>Dish</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Badge</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="menuAdminTableBody">
+                  <!-- Menu items populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. TABLE RESERVATIONS TAB -->
+        <section id="reservationsTab" class="admin-tab-pane">
+          <div class="tab-toolbar">
+            <h3><i class="fa-solid fa-calendar-check highlight-gold"></i> Customer Reservations</h3>
+            <button class="btn-outline-gold btn-sm" onclick="addSampleReservationDemo()">
+              <i class="fa-solid fa-plus"></i> Simulate Booking
+            </button>
+          </div>
+
+          <div class="dash-panel glass-panel">
+            <div class="table-responsive">
+              <table class="admin-table" id="reservationsAdminTable">
+                <thead>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>Guest Name</th>
+                    <th>Contact Phone</th>
+                    <th>Date & Time</th>
+                    <th>Party Size</th>
+                    <th>Seating Preference</th>
+                    <th>Notes</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="reservationsTableBody">
+                  <!-- Bookings injected -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. GUEST REVIEWS TAB -->
+        <section id="reviewsTab" class="admin-tab-pane">
+          <div class="tab-toolbar">
+            <h3><i class="fa-solid fa-comments highlight-gold"></i> Customer Feedback</h3>
+          </div>
+
+          <div class="dash-panel glass-panel">
+            <div class="table-responsive">
+              <table class="admin-table" id="reviewsAdminTable">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Rating</th>
+                    <th>Favorite Dish</th>
+                    <th>Comments</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="reviewsTableBody">
+                  <!-- Reviews populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: ADD / EDIT DISH -->
+  <div class="modal-overlay" id="dishModal">
+    <div class="modal-box glass-panel">
+      <div class="modal-header">
+        <h3 id="dishModalTitle"><i class="fa-solid fa-utensils highlight-gold"></i> Add New Menu Dish</h3>
+        <button class="modal-close-btn" onclick="closeAdminModal('dishModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="dishForm" class="modal-form">
+        <input type="hidden" id="editDishId" value="">
+        <div class="form-group">
+          <label>Dish Name</label>
+          <input type="text" id="dishName" required placeholder="e.g. Royal Afghani Boti">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category</label>
+            <select id="dishCategory" required>
+              <option value="BBQ">BBQ & Grills</option>
+              <option value="Main Course">Royal Mains</option>
+              <option value="Starters">Starters & Soups</option>
+              <option value="Fast Food">Burgers & Pizzas</option>
+              <option value="Desserts">Sweet Desserts</option>
+              <option value="Beverages">Royal Drinks</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Price (PKR / Rs.)</label>
+            <input type="number" id="dishPrice" required placeholder="1250" min="50">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Rating (1.0 - 5.0)</label>
+            <input type="number" id="dishRating" step="0.1" min="1" max="5" value="4.9">
+          </div>
+          <div class="form-group">
+            <label>Badge / Tag</label>
+            <input type="text" id="dishBadge" placeholder="Chef Special / Bestseller / Spicy">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Image URL (Direct link to photo)</label>
+          <input type="url" id="dishImage" required placeholder="https://images.unsplash.com/...">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="dishDescription" rows="2" required placeholder="Ingredients, taste profile, and culinary details..."></textarea>
+        </div>
+        <div class="form-group">
+          <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+            <input type="checkbox" id="dishIsSpecial" style="width:auto;"> Feature in "Chef's Specials" Section
+          </label>
+        </div>
+        <button type="submit" class="btn-royal btn-block btn-shimmer animated-btn">
+          <span><i class="fa-solid fa-save"></i> Save Menu Item</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="adminToastContainer" class="toast-container"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

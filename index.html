@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEERZAIB RESTAURANT | Royal Dining & Fine Cuisine</title>
+  <meta name="description" content="Welcome to MEERZAIB RESTAURANT - Experience authentic royal flavors, master craft steaks, traditional biryani, and artisanal gourmet cuisine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container marquee-content">
+      <span>✨ Welcome to <strong>MEERZAIB RESTAURANT</strong> — Dine Like Royalty! Use code <strong>MEERZAIB10</strong> for 10% OFF</span>
+      <span class="announcement-item"><i class="fa-solid fa-phone"></i> +92 300 1234567</span>
+      <span class="announcement-item"><i class="fa-solid fa-clock"></i> Open: 12:00 PM - 02:00 AM</span>
+      <a href="admin.html" class="admin-pill-link"><i class="fa-solid fa-shield-halved"></i> Admin Portal</a>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo">
+        <div class="logo-icon-box">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MEERZAIB</span>
+          <span class="brand-sub">RESTAURANT & LOUNGE</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#specials" class="nav-item"><i class="fa-solid fa-fire"></i> Specials</a>
+        <a href="#menu" class="nav-item"><i class="fa-solid fa-utensils"></i> Royal Menu</a>
+        <a href="#reservation" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Reservation</a>
+        <a href="#reviews" class="nav-item"><i class="fa-solid fa-star"></i> Reviews</a>
+        <a href="#contact" class="nav-item"><i class="fa-solid fa-location-dot"></i> Contact</a>
+        <a href="admin.html" class="nav-item mobile-only"><i class="fa-solid fa-user-shield"></i> Admin Panel</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Search Trigger -->
+        <button class="icon-btn search-toggle" id="searchToggle" title="Search Dishes">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Cart Button with Animation -->
+        <button class="cart-trigger-btn animated-btn" id="cartTrigger" title="View Cart">
+          <div class="cart-btn-inner">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-label">Cart</span>
+            <span class="cart-badge bounce-anim" id="cartBadgeCount">0</span>
+          </div>
+          <span class="cart-glow"></span>
+        </button>
+
+        <!-- Table Book CTA -->
+        <a href="#reservation" class="btn-royal btn-shimmer header-book-btn">
+          <span><i class="fa-solid fa-chair"></i> Book Table</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="home">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge pulse-badge">
+          <i class="fa-solid fa-award"></i> Premier Royal Dining Experience
+        </div>
+        <h1 class="hero-title">
+          Taste The <span class="highlight-gold">Elegance</span> & Royal Tradition
+        </h1>
+        <p class="hero-desc">
+          At <strong>MEERZAIB RESTAURANT</strong>, every dish is an artisanal masterpiece crafted by master chefs using premium cuts, royal aromatic spices, and passionate culinary heritage.
+        </p>
+
+        <div class="hero-btn-group">
+          <a href="#menu" class="btn-royal btn-glow btn-ripple">
+            <i class="fa-solid fa-book-open"></i> Explore Royal Menu
+          </a>
+          <a href="#reservation" class="btn-glass btn-glow btn-ripple">
+            <i class="fa-solid fa-calendar-plus"></i> Reserve VIP Table
+          </a>
+          <a href="admin.html" class="btn-outline-gold btn-ripple">
+            <i class="fa-solid fa-lock"></i> Admin Panel
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number">4.9 <i class="fa-solid fa-star"></i></span>
+            <span class="stat-text">3,500+ Happy Foodies</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <span class="stat-number">65+</span>
+            <span class="stat-text">Signature Royal Dishes</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <span class="stat-number">25m</span>
+            <span class="stat-text">Average Delivery Speed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-food-plate-wrap">
+          <div class="plate-glow-circle"></div>
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Royal BBQ Ribs Platter" class="hero-main-img rotate-slow">
+          
+          <!-- Floating Feature Badges -->
+          <div class="floating-badge badge-top-right float-anim-1">
+            <div class="badge-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+            <div class="badge-info">
+              <h4>Chef's Signature</h4>
+              <p>Special Royal BBQ</p>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-bottom-left float-anim-2">
+            <div class="badge-icon badge-icon-gold"><i class="fa-solid fa-tags"></i></div>
+            <div class="badge-info">
+              <h4>Special Discount</h4>
+              <p>Flat 10% Off Today</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Chef's Specials & Deals -->
+  <section class="specials-section section-padding" id="specials">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading"><i class="fa-solid fa-crown"></i> Handcrafted Daily</span>
+        <h2 class="main-heading">Chef's <span class="highlight-gold">Signature Specials</span></h2>
+        <p class="section-caption">Prepared with secret royal recipes, infused with slow smoke and premium authentic spices.</p>
+      </div>
+
+      <div class="specials-grid" id="specialsContainer">
+        <!-- Dynamically injected or fallback items -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Royal Menu Section -->
+  <section class="menu-section section-padding" id="menu">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading"><i class="fa-solid fa-utensils"></i> Indulge Your Senses</span>
+        <h2 class="main-heading">Explore <span class="highlight-gold">Royal Menu</span></h2>
+        <p class="section-caption">Choose from our wide array of appetizers, barbecue, dum biryani, fast food, and royal desserts.</p>
+      </div>
+
+      <!-- Search & Filters Container -->
+      <div class="menu-controls-box">
+        <div class="search-bar-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="menuSearchInput" placeholder="Search delicious dishes, BBQ, biryani, burgers...">
+          <button id="clearSearchBtn" class="clear-search-btn" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="category-filters" id="categoryFilterContainer">
+          <button class="filter-btn active animated-btn" data-category="all">
+            <i class="fa-solid fa-border-all"></i> All Dishes
+          </button>
+          <button class="filter-btn animated-btn" data-category="Starters">
+            <i class="fa-solid fa-bowl-rice"></i> Starters & Soups
+          </button>
+          <button class="filter-btn animated-btn" data-category="BBQ">
+            <i class="fa-solid fa-fire"></i> BBQ & Grills
+          </button>
+          <button class="filter-btn animated-btn" data-category="Main Course">
+            <i class="fa-solid fa-drumstick-bite"></i> Royal Mains
+          </button>
+          <button class="filter-btn animated-btn" data-category="Fast Food">
+            <i class="fa-solid fa-burger"></i> Burgers & Pizzas
+          </button>
+          <button class="filter-btn animated-btn" data-category="Desserts">
+            <i class="fa-solid fa-ice-cream"></i> Sweet Desserts
+          </button>
+          <button class="filter-btn animated-btn" data-category="Beverages">
+            <i class="fa-solid fa-martini-glass-citrus"></i> Royal Drinks
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuCardsContainer">
+        <!-- Food Items Rendered Dynamically -->
+      </div>
+      
+      <!-- No Items Found State -->
+      <div id="noItemsMessage" class="empty-state" style="display:none;">
+        <i class="fa-solid fa-utensils empty-icon"></i>
+        <h3>No dishes matched your search</h3>
+        <p>Try searching with another keyword or explore all categories.</p>
+        <button class="btn-royal" onclick="resetMenuFilters()">View All Items</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Table Reservation Section -->
+  <section class="reservation-section section-padding" id="reservation">
+    <div class="container reservation-container">
+      <div class="reservation-card glass-panel">
+        <div class="reservation-content">
+          <span class="sub-heading"><i class="fa-solid fa-calendar-days"></i> Reserve An Experience</span>
+          <h2 class="main-heading">Book Your <span class="highlight-gold">Royal Table</span></h2>
+          <p class="section-caption">Enjoy priority seating in our Luxury Family Dining Hall, Open Air Rooftop, or VIP Private Lounge.</p>
+
+          <form id="reservationForm" class="reservation-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resName"><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="resName" required placeholder="e.g. Meer Zaib">
+              </div>
+              <div class="form-group">
+                <label for="resPhone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+                <input type="tel" id="resPhone" required placeholder="e.g. 0300-1234567">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resDate"><i class="fa-solid fa-calendar"></i> Date</label>
+                <input type="date" id="resDate" required>
+              </div>
+              <div class="form-group">
+                <label for="resTime"><i class="fa-solid fa-clock"></i> Preferred Time</label>
+                <select id="resTime" required>
+                  <option value="">Select Time Slot</option>
+                  <option value="01:00 PM">01:00 PM (Lunch)</option>
+                  <option value="02:30 PM">02:30 PM (Lunch)</option>
+                  <option value="07:00 PM">07:00 PM (Dinner)</option>
+                  <option value="08:30 PM">08:30 PM (Dinner)</option>
+                  <option value="10:00 PM">10:00 PM (Late Dinner)</option>
+                  <option value="11:30 PM">11:30 PM (Midnight)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resGuests"><i class="fa-solid fa-users"></i> Number of Guests</label>
+                <select id="resGuests" required>
+                  <option value="1 Person">1 Guest</option>
+                  <option value="2 Persons" selected>2 Guests (Couple Table)</option>
+                  <option value="4 Persons">4 Guests (Family Table)</option>
+                  <option value="6 Persons">6 Guests (Large Table)</option>
+                  <option value="8+ Persons">8+ Guests (VIP Hall / Party)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="resSeating"><i class="fa-solid fa-couch"></i> Seating Preference</label>
+                <select id="resSeating">
+                  <option value="Royal Hall (Indoor)">Royal Hall (Air Conditioned)</option>
+                  <option value="Open Air Rooftop">Open Air Rooftop (Sky View)</option>
+                  <option value="VIP Private Lounge">VIP Private Lounge</option>
+                  <option value="Family Privacy Area">Family Privacy Cabana</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="resNotes"><i class="fa-solid fa-comment-dots"></i> Special Requests (Optional)</label>
+              <textarea id="resNotes" rows="2" placeholder="Birthday celebration, anniversary cake, quiet corner, baby chair..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-royal btn-block btn-shimmer animated-btn" id="resSubmitBtn">
+              <span><i class="fa-solid fa-check-circle"></i> Confirm Table Reservation</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="reservation-preview-box">
+          <div class="res-info-item">
+            <i class="fa-solid fa-bell-concierge info-icon"></i>
+            <div>
+              <h4>Prompt Reservation Confirmation</h4>
+              <p>Your booking is directly synced to our front-desk admin panel for instant readiness.</p>
+            </div>
+          </div>
+          <div class="res-info-item">
+            <i class="fa-solid fa-music info-icon"></i>
+            <div>
+              <h4>Live Instrumental Music</h4>
+              <p>Enjoy soft ambient royal sitar & acoustic melodies every evening.</p>
+            </div>
+          </div>
+          <div class="res-info-item">
+            <i class="fa-solid fa-square-parking info-icon"></i>
+            <div>
+              <h4>Complimentary Valet Parking</h4>
+              <p>Secure parking area with dedicated valet assistance for all guests.</p>
+            </div>
+          </div>
+
+          <div class="direct-call-box">
+            <span>Direct Reservation Hotline:</span>
+            <a href="tel:+923001234567" class="hotline-link"><i class="fa-solid fa-phone-volume"></i> +92 300 1234567</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Reviews -->
+  <section class="reviews-section section-padding" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="sub-heading"><i class="fa-solid fa-heart"></i> Guest Accolades</span>
+        <h2 class="main-heading">Words From <span class="highlight-gold">Our Patrons</span></h2>
+        <p class="section-caption">Read verified reviews from guests who experienced the hospitality of Meerzaib Restaurant.</p>
+      </div>
+
+      <div class="reviews-grid" id="reviewsContainer">
+        <!-- Dynamically injected reviews -->
+      </div>
+
+      <div class="leave-review-cta text-center">
+        <button class="btn-outline-gold btn-ripple animated-btn" id="openReviewModalBtn">
+          <i class="fa-solid fa-pen-to-square"></i> Leave a Review
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Contact Info -->
+  <section class="contact-section section-padding" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card glass-panel">
+          <span class="sub-heading"><i class="fa-solid fa-location-dot"></i> Visit Our Restaurant</span>
+          <h2 class="main-heading">Find <span class="highlight-gold">MEERZAIB</span></h2>
+          <p class="section-caption">Conveniently situated in the prime dining hub with spacious indoor and rooftop seating.</p>
+
+          <div class="contact-details-list">
+            <div class="contact-detail-row">
+              <div class="icon-circle"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div>
+                <h5>Address</h5>
+                <p>Main Boulevard, Commercial Avenue, Gourmet Street, Block C</p>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h5>Phone & WhatsApp</h5>
+                <p>+92 300 1234567 / +92 321 7654321</p>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h5>Email Us</h5>
+                <p>info@meerzaibrestaurant.com</p>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <h5>Opening Hours</h5>
+                <p>Monday - Sunday: 12:00 PM - 02:00 AM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-map-card glass-panel">
+          <div class="map-placeholder">
+            <i class="fa-solid fa-map-pin map-pin-icon pulse-anim"></i>
+            <h3>MEERZAIB RESTAURANT</h3>
+            <p>Luxury Dining Hall & Rooftop Lounge</p>
+            <a href="https://maps.google.com" target="_blank" class="btn-royal btn-sm">
+              <i class="fa-solid fa-diamond-turn-right"></i> Open In Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <div class="logo-icon-box"><i class="fa-solid fa-crown"></i></div>
+          <div class="brand-text">
+            <span class="brand-name">MEERZAIB</span>
+            <span class="brand-sub">RESTAURANT</span>
+          </div>
+        </div>
+        <p class="footer-about">
+          Excellence in taste, hygiene, and royal hospitality. Serving authentic Pakistani, BBQ, Continental, and artisan fast foods with distinction.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu & Pricing</a></li>
+          <li><a href="#specials">Chef's Specials</a></li>
+          <li><a href="#reservation">Table Booking</a></li>
+          <li><a href="#reviews">Guest Reviews</a></li>
+          <li><a href="admin.html" class="footer-admin-link"><i class="fa-solid fa-shield-halved"></i> Staff Admin Panel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Top Cuisines</h4>
+        <ul class="footer-menu">
+          <li><a href="#menu">Royal Dum Biryani</a></li>
+          <li><a href="#menu">Charcoal Grilled BBQ</a></li>
+          <li><a href="#menu">Smash Beef Burgers</a></li>
+          <li><a href="#menu">Handi & Karahi</a></li>
+          <li><a href="#menu">Traditional Royal Desserts</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Stay Updated</h4>
+        <p class="newsletter-desc">Subscribe to receive exclusive secret menu promotions and weekend discount codes.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('🎉 Thank you for subscribing to Meerzaib news!'); this.reset();">
+          <div class="newsletter-input-wrap">
+            <input type="email" required placeholder="Enter your email address">
+            <button type="submit" class="newsletter-btn animated-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 <strong>MEERZAIB RESTAURANT</strong>. All Rights Reserved. Crafted with Royal Precision.</p>
+        <div class="footer-admin-pill">
+          <a href="admin.html"><i class="fa-solid fa-lock"></i> Admin Dashboard Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title-box">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Your Royal Feast</h3>
+      </div>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-body" id="cartItemsList">
+      <!-- Injected Cart Items or Empty state -->
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="coupon-box">
+        <input type="text" id="couponCodeInput" placeholder="Enter coupon code (try MEERZAIB10)">
+        <button class="btn-apply-coupon animated-btn" id="applyCouponBtn">Apply</button>
+      </div>
+      <div id="couponAppliedBadge" class="coupon-applied-text" style="display:none;"></div>
+
+      <div class="bill-breakdown">
+        <div class="bill-row">
+          <span>Subtotal</span>
+          <span id="billSubtotal">Rs. 0</span>
+        </div>
+        <div class="bill-row discount-row" id="billDiscountRow" style="display:none;">
+          <span>Discount</span>
+          <span id="billDiscount">- Rs. 0</span>
+        </div>
+        <div class="bill-row">
+          <span>Delivery / Service Fee</span>
+          <span id="billDelivery">Rs. 150</span>
+        </div>
+        <div class="bill-row total-row">
+          <span>Grand Total</span>
+          <span id="billGrandTotal" class="highlight-gold">Rs. 0</span>
+        </div>
+      </div>
+
+      <button class="btn-royal btn-block btn-shimmer checkout-btn animated-btn" id="proceedCheckoutBtn">
+        <span>Proceed To Order (<span id="checkoutTotalText">Rs. 0</span>) <i class="fa-solid fa-arrow-right"></i></span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-box glass-panel">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-circle-check highlight-gold"></i> Complete Your Order</h3>
+        <button class="modal-close-btn" onclick="closeModal('checkoutModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="checkoutForm" class="modal-form">
+        <div class="form-group">
+          <label><i class="fa-solid fa-user"></i> Your Full Name</label>
+          <input type="text" id="custName" required placeholder="Meer Zaib">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+            <input type="tel" id="custPhone" required placeholder="0300-1234567">
+          </div>
+          <div class="form-group">
+            <label><i class="fa-solid fa-truck"></i> Order Type</label>
+            <select id="custOrderType">
+              <option value="Home Delivery">Fast Home Delivery</option>
+              <option value="Takeaway / Pickup">Self Pickup (Takeaway)</option>
+              <option value="Dine-in Order">Dine-in Order (At Table)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" id="addressGroup">
+          <label><i class="fa-solid fa-location-dot"></i> Delivery Address</label>
+          <input type="text" id="custAddress" placeholder="House #, Street, Area, Landmark">
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-money-bill-wave"></i> Payment Method</label>
+          <select id="custPayment">
+            <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+            <option value="JazzCash / EasyPaisa">JazzCash / EasyPaisa (Instant)</option>
+            <option value="Debit / Credit Card">Debit / Credit Card on Arrival</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-pen"></i> Chef Instructions (Optional)</label>
+          <input type="text" id="custNotes" placeholder="Extra spicy, no onions, extra chutney...">
+        </div>
+
+        <div class="checkout-summary-mini">
+          <span>Total Payable:</span>
+          <strong id="modalPayableTotal" class="highlight-gold">Rs. 0</strong>
+        </div>
+
+        <button type="submit" class="btn-royal btn-block btn-shimmer animated-btn" id="confirmOrderBtn">
+          <span><i class="fa-solid fa-bag-shopping"></i> Place Order Now</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Celebration Modal -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-box text-center glass-panel">
+      <div class="celebrate-icon-box">
+        <i class="fa-solid fa-circle-check pulse-anim"></i>
+      </div>
+      <h2>Order Placed Successfully!</h2>
+      <p class="order-success-lead">Thank you for dining with <strong>MEERZAIB RESTAURANT</strong>.</p>
+      
+      <div class="order-ticket-box">
+        <div class="ticket-row">
+          <span>Order ID:</span>
+          <strong id="successOrderId" class="highlight-gold">#MZB-0000</strong>
+        </div>
+        <div class="ticket-row">
+          <span>Customer:</span>
+          <span id="successCustomerName">-</span>
+        </div>
+        <div class="ticket-row">
+          <span>Estimated Prep & Delivery:</span>
+          <span><strong>25-35 Minutes</strong></span>
+        </div>
+        <div class="ticket-row">
+          <span>Total Amount:</span>
+          <strong id="successOrderTotal">Rs. 0</strong>
+        </div>
+      </div>
+
+      <p class="note-admin-sync"><i class="fa-solid fa-bolt"></i> Order sent directly to Kitchen & <strong>Admin Dashboard</strong>.</p>
+
+      <div class="modal-action-btns">
+        <button class="btn-royal" onclick="closeModal('orderSuccessModal')">Order More Food</button>
+        <a href="admin.html" class="btn-outline-gold"><i class="fa-solid fa-shield-halved"></i> View In Admin</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leave Review Modal -->
+  <div class="modal-overlay" id="reviewModal">
+    <div class="modal-box glass-panel">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-star highlight-gold"></i> Share Your Experience</h3>
+        <button class="modal-close-btn" onclick="closeModal('reviewModal')"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="reviewForm" class="modal-form">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="reviewAuthor" required placeholder="e.g. Asad Ali">
+        </div>
+        <div class="form-group">
+          <label>Rating</label>
+          <div class="star-rating-select" id="starRatingSelect">
+            <i class="fa-solid fa-star star active" data-rating="1"></i>
+            <i class="fa-solid fa-star star active" data-rating="2"></i>
+            <i class="fa-solid fa-star star active" data-rating="3"></i>
+            <i class="fa-solid fa-star star active" data-rating="4"></i>
+            <i class="fa-solid fa-star star active" data-rating="5"></i>
+            <input type="hidden" id="reviewRatingInput" value="5">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Favorite Dish Ordered</label>
+          <input type="text" id="reviewDish" placeholder="e.g. Royal Mutton Ribs, Dum Biryani">
+        </div>
+        <div class="form-group">
+          <label>Your Review Comments</label>
+          <textarea id="reviewText" required rows="3" placeholder="Tell us how much you loved the taste, ambiance, or service..."></textarea>
+        </div>
+        <button type="submit" class="btn-royal btn-block btn-shimmer animated-btn">
+          <span><i class="fa-solid fa-paper-plane"></i> Submit Review</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating Sticky Action Bar for Mobile -->
+  <div class="mobile-bottom-bar">
+    <a href="#menu" class="mobile-nav-btn"><i class="fa-solid fa-utensils"></i><span>Menu</span></a>
+    <a href="#reservation" class="mobile-nav-btn"><i class="fa-solid fa-chair"></i><span>Book Table</span></a>
+    <button class="mobile-nav-btn highlight-cart" onclick="toggleCart()"><i class="fa-solid fa-bag-shopping"></i><span>Cart (<b id="mobileCartCount">0</b>)</span></button>
+    <a href="admin.html" class="mobile-nav-btn"><i class="fa-solid fa-shield-halved"></i><span>Admin</span></a>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
